@@ -3,15 +3,32 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <link href="style.css" rel="stylesheet" type="text/css" media="all">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebAR demo</title>
+  <title>プロジェクトリンク</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
 </head>
 
 <body>
-  <!-- <button class="styled" type="button" onclick="location.href='./webar/dragon1.html'">ドラゴン1</button> -->
-  <button class="styled" type="button" onclick="location.href='./webar/dragon2.html'">ドラゴン</button>
-  <button class="styled" type="button" onclick="location.href='./webar/sportscar.html'">スポーツカー</button>
+  <header>
+    <h1>リスト</h1>
+  </header>
+  <section id="app">
+    <ul v-if="sysList">
+      <li v-for="(sys, idx) in sysList" :key="sys.id">
+        <h2>{{sys.name}}</h2>
+        <ul v-for="(scene, id) in sys.scenes" :key="scene.name" v-show=true>
+          <span>
+            <li @click="windowOpen(scene.url)">
+              <strong>{{id + 1}}: {{scene.name}}</strong>
+            </li>
+          </span>
+        </ul>
+      </li>
+    </ul>
+  </section>
 </body>
+
 </html>

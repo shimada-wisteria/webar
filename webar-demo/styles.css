@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "Jost", sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin: 2rem auto;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: rgb(189, 181, 213);
+    color: white;
+    text-align: center;
+    width: 90%;
+    max-width: 40rem;
+  }
+
+  #app ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #app li {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin: 1rem auto;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    width: 90%;
+    max-width: 40rem;
+  }
+
+  #app h2 {
+    font-size: 1.5rem;
+    border-bottom: 4px solid #ccc;
+    color: black;
+    margin: 0 0 1rem 0;
+  }
+
+  #app button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid rgb(189, 181, 213);
+    background-color: white;
+    color: rgb(189, 181, 213);
+    padding: 0.05rem 1rem;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  }
+
+  #app button:hover,
+  #app button:active {
+    background-color: #fede58;
+    border-color: rgb(189, 181, 213);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+  }
+
+  #app span:hover li {
+    background-color: rgb(189, 181, 213)6;
+  }

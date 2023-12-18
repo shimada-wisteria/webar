@@ -1,0 +1,26 @@
+[
+    {
+      "id": "web3d",
+      "name": "web3d",
+      "scenes": [
+        {
+          "name": "starsystem",
+          "url": "https://shimada-wisteria.github.io/starsystem/public/"
+        }
+      ]
+    },
+    {
+        "id": "webAR",
+        "name": "webAR",
+        "scenes": [
+          {
+            "name": "ドラゴン",
+            "url": "https://shimada-wisteria.github.io/webar/webar-demo/webar/dragon2.html"
+          },
+          {
+            "name": "スポーツカー",
+            "url": "https://shimada-wisteria.github.io/webar/webar-demo/webar/sportscar.html"
+          }
+        ]
+    }
+  ]
