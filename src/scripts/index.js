@@ -23,6 +23,13 @@ class Playground {
     static async CreateScene(engine, canvas) {
         // This creates a basic Babylon Scene object (non-mesh)
         const scene = new BABYLON.Scene(engine);
+
+        const xr = await scene.createDefaultXRExperienceAsync({
+            uiOptions: {
+                sessionMode: 'immersive-ar'
+            }
+        });
+
         scene.createDefaultCameraOrLight(true, true, true);
         scene.createDefaultEnvironment({
             createSkybox: false
@@ -43,15 +50,8 @@ class Playground {
         environmentLight.diffuse = new BABYLON.Color3(1, 1, 1);
         environmentLight.specular = new BABYLON.Color3(1, 1, 1);
         environmentLight.groundColor = new BABYLON.Color3(1, 1, 1);
-
-        const xr = await scene.createDefaultXRExperienceAsync({
-            uiOptions: {
-                sessionMode: 'immersive-ar'
-            }
-        });
-
-        scene.freezeActiveMeshes();
-        Inspector.Show(scene, {});
+        // scene.freezeActiveMeshes();
+        // Inspector.Show(scene, {});
 
         return scene;
     }
