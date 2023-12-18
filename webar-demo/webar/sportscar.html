@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html class="a-fullscreen">
-
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>ARViewer</title>
-    <meta aframe-injected="" name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
-    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
-    <meta aframe-injected="" name="theme-color" content="black">
-    <script src="https://cdn.jsdelivr.net/npm/aframe@1.2.0/dist/aframe-v1.2.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"
-        integrity="sha256-t05rBfLT65YQer7tdix62/uDmmOddv5IfqoXkRLJFIg=" crossorigin="anonymous"></script>
-    <script src="./ARViewer_files/hide-on-enter-ar.js"></script>
-    <script src="./ARViewer_files/ar-shadows.js"></script>
-    <script src="./ARViewer_files/ar-hit-test.js"></script>
-    <script src="./ARViewer_files/model-viewer.js"></script>
-    <script src="./ARViewer_files/background-gradient.js"></script>
+    <title>webar-demo</title>
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        #canvasZone {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <p>credit: This work is based on "Ford Mustang 2015 EDITION" (https://sketchfab.com/3d-models/ford-mustang-2015-edition-4b1a593df06042e29dce6049b466f932) by WarEntertainment™ (https://sketchfab.com/WarEntertainment) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/).</p>
-    </div>
-    <a-scene renderer="colorManagement: true;">
-        <a-assets>
-            <a-asset-item id="armodel" src="./models/ford_mustang_2015_edition.glb" response-type="arraybuffer"
-                crossorigin="anonymous"></a-asset-item>
-            <img id="shadow" src="./ARViewer_files/shadow.png"></img>
-        </a-assets>
-        <!-- <a-entity camera="active: true" position="0 0 0" data-aframe-default-camera></a-entity> -->
-        <a-entity scale="1 1 1">
-            <a-gltf-model src="#armodel" animation-mixer="clip:*" rotation="0 120 0" position="0 0 -2"></a-gltf-model>
-        </a-entity>
-        <script>
-            const model = document.getElementById("armodel");
-            // credit
-            // "Shadow Dragon" (https://skfb.ly/oOuCZ) by HallowDragon is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-            // "Dragon Gold Low Poly" (https://skfb.ly/oMTQG) by Prof.v7x is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-        </script>
-    </a-scene>
+    <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>
