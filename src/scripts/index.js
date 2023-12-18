@@ -45,9 +45,7 @@ class Playground {
         camera.beta = 1.198;
         camera.radius = 5.25;
 
-        xr.camera.alpha = -0.69;
-        xr.camera.beta = 1.198;
-        xr.camera.radius = 5.25;
+        xr.baseExperience.camera.position.set(0, 0, -1);
 
         const environmentLight = new BABYLON.HemisphericLight('environmentLight', new BABYLON.Vector3(0, 1, 0), scene);
         environmentLight.intensity = 0.5;
